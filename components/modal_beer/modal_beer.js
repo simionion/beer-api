@@ -15,7 +15,7 @@ export function BeerModalTemplate(beer, order_options) {
             <p class="modal_beer_description">${beer.description}</p>
             <div class="modal_beer_footer">
             <h2 class="modal_beer_title ">${beer.name}</h2>
-             ${ordering_options_dropdown}
+             ${order_options.length ? ordering_options_dropdown : "Out of stock"}
             </div>
         </div>
     `;

@@ -1,9 +1,8 @@
 import {create_modal_context} from './components/modal/modal.js';
 import {BeerModalTemplate} from './components/modal_beer/modal_beer.js';
 import {BeerTemplate} from './components/beer/beer.js';
-import {get_data, run_on_enter} from './others.js';
+import {get_data, random_filter, random_int, run_on_enter} from './others.js';
 
-const order_options = [{name: "Glass", qty: 3}, {name: "Can", qty: 2}, {name: "Box", qty: 4}];
 
 const modal = create_modal_context();
 
@@ -16,6 +15,15 @@ get_data().then(beers => {
 
         const beer_container = document.createElement('article');
         beer_container.innerHTML = BeerTemplate(beer);
+
+
+        const order_options = random_filter([
+            {name: "Glass", qty: random_int(1, 4)},
+            {name: "Can", qty: random_int(1, 4)},
+            {name: "Box", qty: random_int(1, 4)}
+        ]);
+
+
         const modal_trigger = () => {
             modal.open("", BeerModalTemplate(beer, order_options));
         };

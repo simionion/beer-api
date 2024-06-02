@@ -29,3 +29,15 @@ export function run_on_enter(callback) {
         }
     }
 }
+
+export function random_int(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export function random_choice(){
+    return Math.random() >= 0.5;
+}
+
+export function random_filter(arr) {
+    return arr.slice().filter(random_choice);
+}
