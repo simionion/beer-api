@@ -1,0 +1,125 @@
+@import "../../theme.less";
+
+.modal {
+  width: 90vw;
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+
+
+  &::backdrop {
+    background-color: rgba(@bg9, 0.5);
+  }
+}
+
+.modal_container {
+  margin: auto;
+  max-width: clamp(90vw, 350px, 400px);
+  max-height: clamp(300px, 90vh, 500px);
+  padding: @pd-4;
+  background-color: @bg1;
+  border-radius: 0.25em;
+  border: 1px solid @bg9;
+  box-shadow: @shadow-2;
+  position: relative;
+}
+
+
+.modal_btn_close {
+  background-color: @bg1;
+  color: @fg1;
+  cursor: pointer;
+  border: 2px solid @fg1;
+  border-radius: 50%;
+  font-size: @font-size-5;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  box-shadow: @shadow-1;
+
+  &:where(:hover,:focus,:focus-within) {
+    background-color: @bg3;
+  }
+}
+
+
+.modal_beer_container {
+  min-width: 300px;
+  max-width: 350px;
+}
+
+
+.modal_beer_img_prewrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  filter: drop-shadow(@shadow-1);
+  border: 10px solid transparent; /*fix collapsing margins on shadows*/
+
+  float: left;
+  shape-outside: circle(50%);
+  shape-margin: 10px;
+}
+
+.modal_beer_img_wrapper {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  border: 20px solid @bg1;
+  position: relative;
+}
+
+.modal_beer_ibu {
+  position: absolute;
+  left: 10px;
+  text-align: center;
+  font-size: @font-size-4;
+}
+
+.modal_beer_abv {
+  position: absolute;
+  font-size: @font-size-4;
+  background-color: @bg1;
+  padding-top: 5px;
+  width: 100%;
+  text-align: center;
+  bottom: -10px;
+}
+
+.modal_beer_image {
+  width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  margin-bottom: 10%;
+  filter: drop-shadow(@shadow-2);
+}
+
+
+.modal_beer_description {
+  min-width: 100px;
+  letter-spacing: 0.1em;
+  font-size: @font-size-4;
+}
+
+.modal_beer_footer {
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.modal_beer_title {
+  font-size: @font-size-3;
+  font-weight: 500;
+  text-transform: uppercase;
+}
