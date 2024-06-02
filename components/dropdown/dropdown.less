@@ -13,10 +13,11 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  white-space: nowrap;
 }
 
 .dropbtn:where(:hover,:focus,:focus-within) {
-  background-color: @bg3;
+  background-color: @bg5;
 }
 
 .dropdown-content {
@@ -63,7 +64,7 @@
 }
 
 .dropdown-content .dropdown-item span::after {
-  content: '\25B6'; /* Unicode character for right arrow */
+  content: '\25BB'; /* Unicode character for right arrow */
   position: absolute;
   right: 10px;
   top: 50%;

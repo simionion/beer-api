@@ -1,9 +1,8 @@
 @import "../../theme.less";
 
 .modal {
-  width: 90vw;
-  height: 90vh;
-  display: grid;
+  width: 100vw;
+  height: 100vh;
   place-items: center;
   overflow: hidden;
   margin: auto;
@@ -14,18 +13,21 @@
   &::backdrop {
     background-color: rgba(@bg9, 0.5);
   }
+
+  @media (max-width: 320px) {
+    display: none;
+  }
 }
 
 .modal_container {
   margin: auto;
-  max-width: clamp(90vw, 350px, 400px);
-  max-height: clamp(300px, 90vh, 500px);
-  padding: @pd-4;
+  padding: @pd-3;
   background-color: @bg1;
   border-radius: 0.25em;
   border: 1px solid @bg9;
   box-shadow: @shadow-2;
   position: relative;
+  max-width: 70vw;
 }
 
 
