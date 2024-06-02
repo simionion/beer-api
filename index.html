@@ -6,16 +6,35 @@
 	<meta content="ie=edge" http-equiv="X-UA-Compatible">
 	<title>Beers</title>
 	<link href="styles.less" rel="stylesheet/less" type="text/css"/>
-	<link rel="preconnect" href="https://api.jsonbin.io">
-	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link href="https://api.jsonbin.io" rel="preconnect">
+	<link href="https://cdn.jsdelivr.net" rel="preconnect">
+	<style>
+		.spinner {
+			position: fixed;
+			inset: calc(50% - 2.5em);
+			pointer-events: none;
+			width: 5em;
+			height: 5em;
+			border: 0.4em solid #eee;
+			border-top-color: #3E67EC;
+			border-radius: 50%;
+			animation: loader 1s linear infinite;
+		}
+
+		@keyframes loader {
+			100% {
+				transform: rotate(360deg)
+			}
+		}
+	</style>
 </head>
 <body>
 
 <main id="app">
-	Loading...
+	<i class="spinner"></i>
 </main>
 
 <script async src="https://cdn.jsdelivr.net/npm/less"></script>
-<script async type="module" src="app.js"></script>
+<script async src="app.js" type="module"></script>
 </body>
 </html>
