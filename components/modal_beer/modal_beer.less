@@ -4,6 +4,13 @@
 .modal_beer_container {
   max-width: 400px;
 
+  @media (max-width: 499px) {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+  }
+
   @media (min-width: 500px) {
     max-width: 350px;
   }
@@ -83,7 +90,6 @@
   margin: 10px;
 
   @media (max-width: 499px) {
-    background-color: @bg2;
     padding: 10px;
   }
 }
