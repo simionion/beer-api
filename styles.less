@@ -25,8 +25,12 @@
   cursor: pointer;
   max-width: 200px;
   box-shadow: @shadow-1;
-}
+  transition: transform 0.3s ease;
 
+  &:where(:hover,:focus,:focus-within) {
+    transform: scale(1.05);
+  }
+}
 
 .beer_image {
   width: 100%;
@@ -36,7 +40,6 @@
   margin-top: @mg-3;
   filter: drop-shadow(@shadow-2);
 }
-
 
 .beer_title {
   text-align: center;
@@ -126,12 +129,16 @@
   top: -25px;
   right: -25px;
   box-shadow: @shadow-1;
+
+  &:where(:hover,:focus,:focus-within) {
+    background-color: @bg3;
+  }
 }
 
 
 .modal_beer_container {
-  min-width: 300px;
-  max-width: 350px;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 
@@ -268,9 +275,10 @@
 }
 
 .dropdown-content .dropdown-item span::after {
-    content: '\25B6'; /* Unicode character for right arrow */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+  content: '\25B6'; /* Unicode character for right arrow */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
