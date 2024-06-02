@@ -166,6 +166,8 @@ get_data().then(beers => {
 
     beers.forEach(beer => {
 
+        beer.image_url = "images/" + beer.image_url.split('/').pop();
+
         const beer_container = document.createElement('article');
         beer_container.innerHTML = BeerTemplate(beer);
         const modal_trigger = () => {
