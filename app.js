@@ -16,6 +16,8 @@ get_data().then(beers => {
         const beer_container = document.createElement('article');
         beer_container.innerHTML = BeerTemplate(beer);
 
+        beer_container.querySelector(".beer_container").style.background = `linear-gradient(90deg, var(--bg${beer.ibu.toString()[0]}) 0%, var(--bg1) 100%)`;
+
 
         const order_options = random_filter([
             {name: "Glass", qty: random_int(1, 4)},
