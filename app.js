@@ -11,7 +11,7 @@ get_data().then(beers => {
     app_container.innerHTML = ''; // Clear the loading message
 
     beers.forEach(beer => {
-        beer.image_url = "images/" + beer.image_url.split('/').pop();
+        beer.image_url = "images/" + beer.image_url.split('/').pop().replace(/png/g, "webp")
 
         const beer_container = document.createElement('article');
         beer_container.innerHTML = BeerTemplate(beer);
